@@ -1,0 +1,100 @@
+
+
+	<div class="panel">
+    	
+        <div class="panel-body col-md-offset-3">
+<form role="form" class="form-horizontal"  action="javascript:alert('提交成功');" method="post">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">订单号</label>
+        <div class="col-sm-6">
+          <input class="form-control"  type="text" name="userName" placeholder="请在这里输入订单号" required pattern="^\w{4,10}$">
+        </div>
+      </div>
+      
+      <div class="form-group">
+          <label class="col-sm-2 control-label">发货人姓名</label>
+          <div class="col-sm-6">
+            <input type="text" name="sendName" placeholder="请输入2-6位的中文姓名" required  class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">发货人手机号</label>
+          <div class="col-sm-6">
+            <input type="tel" name="userTel" placeholder="请输入11位手机号" required pattern="^\w{11,11}$"  class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">发货地址</label>
+          <div class="col-sm-6">
+            <select name="receiveAddr" class="form-control">
+             <option value="hb">武汉市</option>
+             <option value="hn">北京市</option>
+             <option value="bj">上海市</option>
+             <option value="gz">广州市</option>
+             <option value="hz">杭州市</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">收货人姓名</label>
+          <div class="col-sm-6">
+            <input class="form-control"  type="text" name="ReceiveName" placeholder="请输入2-6位的中文姓名" required pattern="^[\u4e00-\u9fa5]{2,6}$">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">收货人手机号</label>
+          <div class="col-sm-6">
+            <input type="tel" name="userTel" placeholder="请输入11位手机号" required pattern="^\w{11,11}$"  class="form-control">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">收货地址</label>
+          <div class="col-sm-6">
+            <select name="receiveAddr" class="form-control">
+             <option value="hb">武汉市</option>
+             <option value="hn">北京市</option>
+             <option value="bj">上海市</option>
+             <option value="gz">广州市</option>
+             <option value="hz">杭州市</option>
+            </select>
+          </div>
+        </div>
+      
+      <div class="form-group">
+          <label class="col-sm-2 control-label">货物名称</label>
+          <div class="col-sm-6">
+            <input type="text" name="sendName" placeholder="请输入货物名称" required  class="form-control">
+          </div>
+        </div>
+
+      <div class="form-group">
+          <label class="col-sm-2 control-label">货物重量</label>
+          <div class="col-sm-6">
+            <input type="text" name="sendName" placeholder="请输入货物重量" required  class="form-control">
+          </div>
+        </div>
+
+      <div class="form-group">
+          <label class="col-sm-2 control-label">运输价格</label>
+          <div class="col-sm-6">
+            <input type="text" name="sendName" placeholder="请输入运输价格" required  class="form-control">
+          </div>
+        </div>
+
+      <div class="form-group">
+        <span class="col-sm-offset-2 col-sm-2">
+          <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-plus"></i> 订单录入</button>
+        </span>
+        <span class="col-sm-4">
+            <button class="btn btn-danger btn-primary" type="reset"><i class="glyphicon glyphicon-plus"></i> 重&nbsp&nbsp&nbsp&nbsp置</button>
+        </span>
+      </div>
+    </form>
+        </div>
+    </div>
+

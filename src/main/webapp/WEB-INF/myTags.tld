@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    
+  <description>自定义标签</description>
+  <display-name>自定义标签</display-name>
+  <tlib-version>1.2</tlib-version>
+  <short-name>my</short-name>
+  <uri>/myTags</uri>
+ 
+ <tag>
+ 	<name>page</name>
+ 	<tag-class>com.icss.express.tags.PageTag</tag-class>
+ 	<body-content>JSP</body-content>
+ 	<attribute>
+ 		<description>
+ 		当前页码,必填
+ 		</description>
+ 		<name>pagination</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ 	<attribute>
+ 		<description>
+ 		所有记录数,必填
+ 		</description>
+ 		<name>rowAll</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ 	<attribute>
+ 		<description>
+ 		每页最大数，默认 10
+ 		</description>
+ 		<name>rowMax</name>
+ 		<required>false</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ 	<attribute>
+ 		<description>
+ 		显示的页面数量，默认 6
+ 		</description>
+ 		<name>num</name>
+ 		<required>false</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ 	<attribute>
+ 		<description>
+ 		页码的EL表达式名称,默认 page
+ 		</description>
+ 		<name>pageVar</name>
+ 		<required>false</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ 	<attribute>
+ 		<description>
+ 		页码文本的EL表达式名称,默认text
+ 		</description>
+ 		<name>textVar</name>
+ 		<required>false</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+ 
+ 
+ 
+</taglib>

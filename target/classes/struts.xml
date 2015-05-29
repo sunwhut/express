@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!--约定的视图文件存放路径，默认/WEB-INF/content/-->
+	<constant name="struts.convention.result.path" value="/WEB-INF/content/"/>
+	<!-- 指定国际化文件的基本文件名 -->
+	<constant name="struts.custom.i18n.resources" value="message" />
+	<!-- 指定由spring负责action对象的创建 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<!-- 所有匹配*.action的请求都由struts2处理 -->
+	<constant name="struts.action.extension" value="action" />
+	<!-- 是否启用开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<!-- struts配置文件改动后，是否重新加载 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<!-- 设置浏览器是否缓存静态内容 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<!-- 请求参数的编码方式 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<!-- 每次HTTP请求系统都重新加载资源文件，有助于开发 -->
+	<constant name="struts.i18n.reload" value="true" />
+	<!-- 文件上传最大值 -->
+	<constant name="struts.multipart.maxSize" value="104857600" />
+	<!-- 让struts2支持动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- Action名称中是否还是用斜线 -->
+	<constant name="struts.enable.SlashesInActionNames" value="false" />
+	<!-- 允许标签中使用表达式语法 -->
+	<constant name="struts.tag.altSyntax" value="true" />
+	<!-- 对于WebLogic,Orion,OC4J此属性应该设置成true -->
+	<constant name="struts.dispatcher.parametersWorkaround" value="false" />
+
+	<package name="my-default" extends="json-default">
+		<interceptors>
+			<interceptor name="myInterceptor" class="com.icss.express.interceptor.MyInterceptor" /><!--解决中文字符乱码的拦截器-->
+			<interceptor-stack name="myInterceptorStack">
+				<interceptor-ref name="myInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="myInterceptorStack" />
+
+
+		<global-results>
+			<!--配置默认的json视图-->
+			<result name="json" type="json">
+				<param name="contentType">text/html</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="noCache">true</param>
+			</result>
+			<!--配置下载视图-->
+			<result name="down" type="stream">
+				<param name="allowCaching">true</param>
+				<param name="bufferSize">1024</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentLength">${size}</param>
+				<param name="contentType">${contentType}</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+			</result>
+			<!--配置下载的简单视图-->
+			<result name="stream" type="stream">
+				<param name="allowCaching">true</param>
+				<param name="bufferSize">1024</param>
+				<param name="inputName">inputStream</param>
+				<param name="contentType">${contentType}</param>
+			</result>
+
+			<!--设置通用响应重定向到Action视图-->
+			<result name="redirectAction" type="redirectAction">
+				<param name="actionName">${_actionName}</param>
+				<param name="namespace">${_namespace}</param>
+			</result>
+			
+			<!--设置通用请求转发到Action视图-->
+			<result name="forwardAction" type="chain">
+				<param name="actionName">${_actionName}</param>
+				<param name="namespace">${_namespace}</param>
+			</result>
+
+			<!--设置通用响应重定向到某个资源视图-->
+			<result name="redirect" type="redirect">${_redirect}</result>
+			
+			<!--设置通用请求转发到某个资源视图 -->
+			<result name="forward">${_forward}</result>
+			
+			
+
+			
+
+		</global-results>
+
+	</package>
+
+</struts>

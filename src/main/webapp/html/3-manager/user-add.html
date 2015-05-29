@@ -1,0 +1,57 @@
+
+
+	<div class="panel">
+    	
+        <div class="panel-body">
+<form role="form" class="form-horizontal"  action="javascript:alert('提交成功');" method="post">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">用户名</label>
+        <div class="col-sm-10">
+          <input class="form-control"  type="text" name="userName" placeholder="请在这里输入用户名" required pattern="^\w{4,10}$">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="col-sm-2 control-label">密码</label>
+        <div class="col-sm-10">
+          <input type="password" name="userPwd" placeholder="请输入4-10位的密码" required pattern="^\w{4,10}$" class="form-control">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="col-sm-2 control-label">密码确认</label>
+        <div class="col-sm-10">
+          <input type="password" name="userPwd" placeholder="请输入4-10位的密码" required pattern="^\w{4,10}$"  class="form-control">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="col-sm-2 control-label">真实姓名</label>
+        <div class="col-sm-4">
+          <input class="form-control"  type="text" name="userName" placeholder="请输入2-6位的中文姓名" required pattern="^[\u4e00-\u9fa5]{2,6}$">
+        </div>
+      </div>
+      
+    
+      
+       <div class="form-group">
+        <label class="col-sm-2 control-label">新增选择</label>
+        <div class="col-sm-4">
+           <select class="form-control">
+      	<option value="0" selected="selected">站点管理员</option>
+      	<option value="1" selected="selected">仓库管理员</option>
+      
+      </select>
+        </div>
+      </div>
+     
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button class="btn btn-primary" type="submit"><i class="fa fa-plus"></i> 确定</button>
+        </div>
+      </div>
+    </form>
+        </div>
+    </div>
+
